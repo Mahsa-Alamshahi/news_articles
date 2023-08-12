@@ -89,7 +89,15 @@ dependencies {
     implementation("com.google.dagger:hilt-android:2.44")
     kapt("com.google.dagger:hilt-android-compiler:2.44")
     implementation("androidx.hilt:hilt-navigation-compose:1.0.0")
+    implementation("androidx.hilt:hilt-compiler:1.0.0")
     kapt("androidx.hilt:hilt-compiler:1.0.0")
+
+
+    // Kotlin + coroutines
+    implementation("androidx.work:work-runtime-ktx:2.8.0")
+    kapt("com.android.databinding:compiler:3.1.4")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4")
 
 
 }
