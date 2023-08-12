@@ -103,7 +103,11 @@ dependencies {
     //Retrofit
     implementation("com.squareup.retrofit2:retrofit:2.9.0")
     implementation("com.squareup.retrofit2:converter-gson:2.9.0")
-    implementation("com.squareup.okhttp3:okhttp:3.6.0")
+    implementation("com.squareup.okhttp3:okhttp:4.9.3")
+
+
+    //Navigation
+    implementation("androidx.navigation:navigation-compose:2.4.0-alpha02")
 
 
 }
