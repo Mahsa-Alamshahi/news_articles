@@ -1,6 +1,16 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+    id("kotlin-android")
+    id("kotlin-kapt")
+//    id("dagger.hilt.android.plugin")
+//    id("androidx.navigation.safeargs")
+    id("kotlin-parcelize")
+}
+
+
+kapt {
+    correctErrorTypes = true
 }
 
 android {
@@ -24,8 +34,7 @@ android {
         release {
             isMinifyEnabled = false
             proguardFiles(
-                getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
+                getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro"
             )
         }
     }
@@ -49,6 +58,7 @@ android {
     }
 }
 
+
 dependencies {
 
     implementation("androidx.core:core-ktx:1.9.0")
@@ -66,4 +76,14 @@ dependencies {
     androidTestImplementation("androidx.compose.ui:ui-test-junit4")
     debugImplementation("androidx.compose.ui:ui-tooling")
     debugImplementation("androidx.compose.ui:ui-test-manifest")
+
+
+    // Room
+    implementation("androidx.room:room-runtime:2.5.2")
+    implementation("androidx.room:room-ktx:2.5.2")
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0")
+    kapt("androidx.room:room-compiler:2.5.2")
+    implementation("androidx.room:room-rxjava2:2.5.2")
+
+
 }
