@@ -3,7 +3,7 @@ plugins {
     id("org.jetbrains.kotlin.android")
     id("kotlin-android")
     id("kotlin-kapt")
-//    id("dagger.hilt.android.plugin")
+    id("com.google.dagger.hilt.android")
 //    id("androidx.navigation.safeargs")
     id("kotlin-parcelize")
 }
@@ -84,6 +84,12 @@ dependencies {
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0")
     kapt("androidx.room:room-compiler:2.5.2")
     implementation("androidx.room:room-rxjava2:2.5.2")
+
+    // Hilt
+    implementation("com.google.dagger:hilt-android:2.44")
+    kapt("com.google.dagger:hilt-android-compiler:2.44")
+    implementation("androidx.hilt:hilt-navigation-compose:1.0.0")
+    kapt("androidx.hilt:hilt-compiler:1.0.0")
 
 
 }
