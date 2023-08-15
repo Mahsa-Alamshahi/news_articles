@@ -7,13 +7,16 @@ import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import org.newsapi.newsarticles.common.utils.Resource
+import org.newsapi.newsarticles.data.data_source.local.NewsArticleEntity
+import org.newsapi.newsarticles.domain.usecase.AddNewsArticleIntoDbUseCase
 import org.newsapi.newsarticles.domain.usecase.SearchInNewsArticlesUseCase
 import org.newsapi.newsarticles.presentation.news_articles_screen.components.NewsArticleListState
 import javax.inject.Inject
 
 
 @HiltViewModel
-class SearchViewModel @Inject constructor(private val searchInNewsArticlesUseCase: SearchInNewsArticlesUseCase) :
+class SearchViewModel @Inject constructor(private val searchInNewsArticlesUseCase: SearchInNewsArticlesUseCase,
+    private val addNewsArticleIntoDbUseCase: AddNewsArticleIntoDbUseCase) :
     ViewModel() {
 
 
@@ -28,7 +31,6 @@ class SearchViewModel @Inject constructor(private val searchInNewsArticlesUseCas
 
         fun searchInNewsArticles(title: String) {
             viewModelScope.launch {
-                println("News Article in ViewModel")
                 val result = searchInNewsArticlesUseCase(title)
                 result.collect { resultData ->
 
@@ -50,4 +52,15 @@ class SearchViewModel @Inject constructor(private val searchInNewsArticlesUseCas
 
             }
         }
+
+
+
+    fun addNewsArticle(newsArticleEntity: NewsArticleEntity){
+        viewModelScope.launch {
+            addNewsArticleIntoDbUseCase(newsArticleEntity)
+        }
+    }
+
+
+
 }

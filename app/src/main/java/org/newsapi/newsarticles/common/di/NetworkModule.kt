@@ -8,6 +8,8 @@ import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import org.newsapi.newsarticles.common.Constants.BASE_URL
 import org.newsapi.newsarticles.data.data_source.remote.ApiService
+import org.newsapi.newsarticles.data.repository.NewsArticlesRemoteRepositoryImpl
+import org.newsapi.newsarticles.domain.repository.NewsArticlesRemoteRepository
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import javax.inject.Singleton
@@ -48,4 +50,10 @@ object NetworkModule {
     @Singleton
     @Provides
     fun provideHttpLoggingInterceptor(): HttpLoggingInterceptor = HttpLoggingInterceptor()
+
+
+    @Provides
+    @Singleton
+    fun provideSearchInNewsArticlesRemoteRepository(apiService: ApiService): NewsArticlesRemoteRepository =
+        NewsArticlesRemoteRepositoryImpl(apiService)
 }

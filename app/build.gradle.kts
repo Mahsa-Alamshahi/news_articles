@@ -131,4 +131,8 @@ dependencies {
     implementation("com.github.bumptech.glide:compose:1.0.0-alpha.1")
 
 
+    implementation("com.squareup.moshi:moshi:1.14.0")
+    implementation("org.jsoup:jsoup:1.15.3")
+
+
 }

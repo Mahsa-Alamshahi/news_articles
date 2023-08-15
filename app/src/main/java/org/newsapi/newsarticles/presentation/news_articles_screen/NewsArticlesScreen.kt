@@ -86,7 +86,7 @@ fun NewsArticlesScreen(navController: NavController, viewModel: SearchViewModel 
                     .padding(4.dp)
             ) {
                 items(items = newsArticleListState.articleDtos) { article ->
-                    NewsArticleListItem(articleDto = article)
+                    NewsArticleListItem(navController= navController, article = article)
                 }
             }
 

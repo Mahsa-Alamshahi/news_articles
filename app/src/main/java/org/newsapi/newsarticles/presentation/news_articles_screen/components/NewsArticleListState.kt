@@ -1,9 +1,9 @@
 package org.newsapi.newsarticles.presentation.news_articles_screen.components
 
-import org.newsapi.newsarticles.data.data_source.remote.dto.ArticleDto
+import org.newsapi.newsarticles.data.data_source.local.NewsArticleEntity
 
 data class NewsArticleListState(
     val isLoading: Boolean = false,
-    val articleDtos: List<ArticleDto> = emptyList(),
+    val articleDtos: List<NewsArticleEntity> = emptyList(),
     val error: String = ""
 )

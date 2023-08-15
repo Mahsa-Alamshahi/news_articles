@@ -1,10 +1,14 @@
 package org.newsapi.newsarticles.data.data_source.local
 
+import android.os.Parcelable
 import androidx.room.ColumnInfo
 import androidx.room.Entity
+import androidx.room.PrimaryKey
+import com.squareup.moshi.JsonClass
+import kotlinx.parcelize.Parcelize
 
 @Entity(tableName = "news_article")
-data class NewsArticle(
+data class NewsArticleEntity(
 
     @ColumnInfo(name = "name") var name: String? = null,
     @ColumnInfo(name = "author") var author: String? = null,
@@ -15,4 +19,8 @@ data class NewsArticle(
     @ColumnInfo(name = "url") var url: String? = null,
     @ColumnInfo(name = "image_url") var imageUrl: String? = null,
 
-    )
+    ) {
+    @PrimaryKey(autoGenerate = true)
+    var id: Int = 0
+
+}
