@@ -31,7 +31,7 @@ This sample showcases:
 
 ## Screenshots
 
-<img src="screenshots/Screenshot_search_article.jpg"/>
-<img src="screenshots/Screenshot_favorites.jpg"/>
-<img src="screenshots/Screenshot_article_details.jpg"/>
+<img src="screenshots/Screenshot_search_article.jpg" width="300px" height="auto"/>
+<img src="screenshots/Screenshot_favorites.jpg"  width="300px" height="auto"/>
+<img src="screenshots/Screenshot_article_details.jpg"  width="300px" height="auto"/>
 
