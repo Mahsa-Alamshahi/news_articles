@@ -14,4 +14,12 @@ interface NewsArticleDao {
 
     @Query("Select * from news_article")
     suspend fun getAllNewsArticles(): List<NewsArticleEntity>
+
+
+    @Query("SELECT EXISTS(SELECT 1 FROM news_article WHERE title = :title LIMIT 1)")
+    suspend fun isArticleExisted(title: String): Boolean
+
+
+    @Query("DELETE FROM news_article WHERE title = :title")
+    suspend fun deleteNewsArticle(title: String)
 }

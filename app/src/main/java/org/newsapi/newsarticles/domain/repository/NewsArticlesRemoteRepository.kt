@@ -4,5 +4,5 @@ import org.newsapi.newsarticles.data.data_source.remote.dto.ArticleDto
 
 interface NewsArticlesRemoteRepository {
 
-    suspend fun searchInNewsArticles(title: String): List<ArticleDto>
+    suspend fun searchInNewsArticles(title: String, page: Int): List<ArticleDto>
 }

@@ -11,6 +11,7 @@ import org.newsapi.newsarticles.data.data_source.remote.ApiService
 import org.newsapi.newsarticles.data.repository.NewsArticlesRemoteRepositoryImpl
 import org.newsapi.newsarticles.domain.repository.NewsArticlesRemoteRepository
 import retrofit2.Retrofit
+
 import retrofit2.converter.gson.GsonConverterFactory
 import javax.inject.Singleton
 
@@ -23,7 +24,6 @@ object NetworkModule {
     @Singleton
     @Provides
     fun provideHttpClient(logging: HttpLoggingInterceptor): OkHttpClient {
-//        logging.level = HttpLoggingInterceptor.Level.BODY
         return OkHttpClient.Builder().apply {
             addInterceptor(logging)
         }.build()
@@ -40,7 +40,8 @@ object NetworkModule {
         okHttpClient: OkHttpClient, gsonConverterFactory: GsonConverterFactory
     ): Retrofit {
         return Retrofit.Builder().baseUrl(BASE_URL).client(okHttpClient)
-            .addConverterFactory(gsonConverterFactory).build()
+            .addConverterFactory(gsonConverterFactory)
+            .build()
     }
 
     @Singleton
@@ -50,6 +51,7 @@ object NetworkModule {
     @Singleton
     @Provides
     fun provideHttpLoggingInterceptor(): HttpLoggingInterceptor = HttpLoggingInterceptor()
+        .setLevel(HttpLoggingInterceptor.Level.BODY)
 
 
     @Provides

@@ -1,2 +1,0 @@
-package org.newsapi.newsarticles.presentation.news_articles_screen.components
-

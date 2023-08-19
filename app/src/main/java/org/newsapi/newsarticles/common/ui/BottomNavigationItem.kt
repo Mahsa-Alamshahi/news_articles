@@ -1,6 +1,5 @@
-package org.newsapi.newsarticles.common.navigation
+package org.newsapi.newsarticles.common.ui
 
-import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.graphics.vector.ImageVector
 
 data class BottomNavigationItem(
