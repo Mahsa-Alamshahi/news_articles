@@ -1,4 +1,4 @@
-package org.newsapi.newsarticles.ui.theme
+package org.newsapi.newsarticles.common.ui.theme
 
 import android.app.Activity
 import android.os.Build
